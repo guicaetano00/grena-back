@@ -509,7 +509,7 @@ export class Produto {
           UPDATE produtos
 
           SET
-            cod_produto = $1,
+            cod_produto = COALESCE($1, cod_produto),
             nome = $2,
             descricao = $3,
             preco = $4,
